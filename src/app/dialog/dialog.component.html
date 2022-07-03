@@ -1,0 +1,45 @@
+<h1 mat-dialog-title>Add Employee</h1>
+<div mat-dialog-content>
+    <form [formGroup]="employeeForm">
+
+        <mat-form-field appearance="outline">
+            <mat-label>Employee Name</mat-label>
+            <input formControlName="empName" matInput placeholder="Employee Name"/>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Employee Category</mat-label>
+            <mat-select formControlName="category" placeholder="Employee category">
+                <mat-option value="Springboot">Springboot Developers</mat-option>
+                <mat-option value="Angular">Angular Developers</mat-option>
+                <mat-option value="Kotlin">Kotlin Developers</mat-option>
+                <mat-option value="Java">Java Developers</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field color="primary" appearance="outline">
+            <mat-label>Employment Date</mat-label>
+            <input formControlName="date" matInput [matDatepicker]="picker2">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2 color="primary"></mat-datepicker>
+          </mat-form-field>
+          <label id="example-radio-group-label">Years of Experience</label>
+          <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" formControlName="experience">
+          <mat-radio-button color="primary" class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+            {{season}}
+        </mat-radio-button>
+      </mat-radio-group>
+      <mat-form-field appearance="outline">
+        <mat-label>Salary</mat-label>
+        <input formControlName="salary" matInput type="number" placeholder="Employee Salary"/>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <textarea formControlName="description" matInput></textarea>
+    </mat-form-field>
+    
+    </form>
+    <div mat-dialog-action [align]="'end'" class="example-button-row">
+        <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+        <button mat-raised-button color="primary" (click)="addEmployee()">Save</button>
+    </div>
+</div>
+
