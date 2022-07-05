@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-dialog',
@@ -12,7 +14,7 @@ export class DialogComponent implements OnInit {
   seasons: string[] = ['One', 'Two', 'Three', 'Four'];
   employeeForm !: FormGroup;
 
-  constructor(private formBuilder : FormBuilder) { }
+  constructor(private formBuilder : FormBuilder, private Api : ApiService, private matDialogRef :MatDialogRef<DialogComponent> ) { }
 
   ngOnInit(): void {
     this.employeeForm = this.formBuilder.group({
@@ -26,7 +28,22 @@ export class DialogComponent implements OnInit {
   }
 
   addEmployee(){
-    console.log(this.employeeForm.value)
+    // console.log(this.employeeForm.value)
+
+    if(this.employeeForm.valid){
+      this.Api.postEmployee(this.employeeForm.value)
+      .subscribe({
+        next: (res)=>{
+        alert("Employee Added Successfuly!");
+        this.employeeForm.reset();
+        this.matDialogRef.close('save');
+        },
+        error: ()=>{
+          alert("Error Occurred!")
+        }
+      }
+      )
+    }
   }
 
 }

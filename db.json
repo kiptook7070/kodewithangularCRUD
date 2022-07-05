@@ -1,0 +1,95 @@
+{
+  "employeeList": [
+    {
+      "empName": "EMTECH",
+      "category": "Angular",
+      "experience": "Three",
+      "salary": 40000,
+      "date": "2022-07-03T21:00:00.000Z",
+      "description": "This is First Description",
+      "id": 1
+    },
+    {
+      "empName": "EMTECH",
+      "category": "Angular",
+      "experience": "Three",
+      "salary": 40000,
+      "date": "2022-07-03T21:00:00.000Z",
+      "description": "This is First Description",
+      "id": 2
+    },
+    {
+      "empName": "EMTECH",
+      "category": "Angular",
+      "experience": "Two",
+      "salary": 74158,
+      "date": "2022-07-03T21:00:00.000Z",
+      "description": "Description",
+      "id": 3
+    },
+    {
+      "empName": "EMTECH",
+      "category": "Java",
+      "experience": "Two",
+      "salary": 2345,
+      "date": "2022-07-04T21:00:00.000Z",
+      "description": "rrrrrrrrr",
+      "id": 4
+    },
+    {
+      "empName": "errrr",
+      "category": "Angular",
+      "experience": "One",
+      "salary": 45565,
+      "date": "2022-07-18T21:00:00.000Z",
+      "description": "rrrr",
+      "id": 5
+    },
+    {
+      "empName": "errrr",
+      "category": "Angular",
+      "experience": "One",
+      "salary": 45565,
+      "date": "2022-07-18T21:00:00.000Z",
+      "description": "rrrr",
+      "id": 6
+    },
+    {
+      "empName": "errrr",
+      "category": "Angular",
+      "experience": "One",
+      "salary": 45565,
+      "date": "2022-07-18T21:00:00.000Z",
+      "description": "rrrr",
+      "id": 7
+    },
+    {
+      "empName": "errrr",
+      "category": "Angular",
+      "experience": "One",
+      "salary": 45565,
+      "date": "2022-07-18T21:00:00.000Z",
+      "description": "rrrr",
+      "id": 8
+    },
+    {
+      "empName": "ddd",
+      "category": "Kotlin",
+      "experience": "One",
+      "salary": 454,
+      "date": "2022-07-25T21:00:00.000Z",
+      "description": "ffff",
+      "id": 9
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
