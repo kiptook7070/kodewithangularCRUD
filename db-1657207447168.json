@@ -12,11 +12,29 @@
     {
       "empName": "EMTECH",
       "category": "Angular",
+      "experience": "Three",
+      "salary": 40000,
+      "date": "2022-07-03T21:00:00.000Z",
+      "description": "This is First Description",
+      "id": 2
+    },
+    {
+      "empName": "EMTECH",
+      "category": "Angular",
       "experience": "Two",
       "salary": 74158,
       "date": "2022-07-03T21:00:00.000Z",
       "description": "Description",
       "id": 3
+    },
+    {
+      "empName": "EMTECH",
+      "category": "Java",
+      "experience": "Two",
+      "salary": 2345,
+      "date": "2022-07-04T21:00:00.000Z",
+      "description": "rrrrrrrrr",
+      "id": 4
     },
     {
       "empName": "kiptoo joshua",
@@ -26,15 +44,6 @@
       "date": "2022-07-04T21:00:00.000Z",
       "description": "My Description",
       "id": 10
-    },
-    {
-      "empName": "Joshua Kiptoo",
-      "category": "Springboot",
-      "experience": "One",
-      "salary": 451000,
-      "date": "2022-07-04T21:00:00.000Z",
-      "description": "This is Joshua Kiptoo",
-      "id": 11
     }
   ],
   "comments": [

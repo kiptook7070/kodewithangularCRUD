@@ -16,7 +16,7 @@ import {MatTableDataSource} from '@angular/material/table';
 export class AppComponent implements OnInit {
   title = 'kodewithangularCRUD';
 
-  displayedColumns: string[] = ['empName', 'category', 'date', 'experience', 'salary', 'description'];
+  displayedColumns: string[] = ['empName', 'category', 'date', 'experience', 'salary', 'description', 'action'];
   dataSource !: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator !: MatPaginator;
@@ -32,6 +32,11 @@ export class AppComponent implements OnInit {
   addEmployee(){
   this.dialog.open(DialogComponent, {
     width:"35%"
+  }).afterClosed().subscribe(val=>{
+    if(val=== 'Save'){
+      this.getAllEmployees();
+
+    }
   })
   
  }
@@ -51,6 +56,31 @@ export class AppComponent implements OnInit {
         alert("Could not fetch Data");
       }
     })
+    }
+
+    editEmployee(row: any){
+      this.dialog.open(DialogComponent,{
+        width:'35%',
+        data: row
+      }).afterClosed().subscribe(val=>{
+        if (val==='Update') {
+          this.getAllEmployees();
+        }
+      })
+    
+    }
+
+    deleteEmployee(id: number){
+      this.api.deleteEmployee(id)
+      .subscribe({
+        next: (res)=>{
+          alert("Employee Deleted Successfuly");
+          this.getAllEmployees();
+        },
+      error: (res)=>{
+        alert("Error in Deleting the REcord");
+      }
+      })
     }
 
     applyFilter(event: Event) {
