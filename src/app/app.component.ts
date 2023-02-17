@@ -1,10 +1,10 @@
-import { Component, OnInit, ViewChild, AfterViewInit} from '@angular/core';
-import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { DialogComponent } from './dialog/dialog.component';
 import { ApiService } from './services/api.service';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatSort} from '@angular/material/sort';
-import {MatTableDataSource} from '@angular/material/table';
 
 
 
@@ -18,7 +18,6 @@ export class AppComponent implements OnInit {
 
   displayedColumns: string[] = ['empName', 'category', 'date', 'experience', 'salary', 'description', 'action'];
   dataSource !: MatTableDataSource<any>;
-
   @ViewChild(MatPaginator) paginator !: MatPaginator;
   @ViewChild(MatSort) sort !: MatSort;
 
@@ -38,7 +37,7 @@ export class AppComponent implements OnInit {
 
     }
   })
-  
+
  }
 
  getAllEmployees(){
@@ -47,7 +46,7 @@ export class AppComponent implements OnInit {
     this.api.getEmployee()
     .subscribe({
       next : (res)=>{
-        // 
+        //
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
@@ -67,7 +66,7 @@ export class AppComponent implements OnInit {
           this.getAllEmployees();
         }
       })
-    
+
     }
 
     deleteEmployee(id: number){
@@ -86,7 +85,7 @@ export class AppComponent implements OnInit {
     applyFilter(event: Event) {
       const filterValue = (event.target as HTMLInputElement).value;
       this.dataSource.filter = filterValue.trim().toLowerCase();
-  
+
       if (this.dataSource.paginator) {
         this.dataSource.paginator.firstPage();
       }
